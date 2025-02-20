@@ -18,11 +18,11 @@ export class OpenaiService {
         {
           role: 'system',
           content:
-            'Você é um assistente que gera documentações detalhadas para projetos Java Spring Boot.',
+            'Você é um assistente que gera documentações detalhadas para projetos, incluindo arquitetura e o contexto do projeto.',
         },
         {
           role: 'user',
-          content: `Gere um README.md para o seguinte projeto Java Spring Boot:\n\n${source}`,
+          content: `Gere um README.md para o seguinte projeto:\n\n${source}`,
         },
       ],
       temperature: 0.7,
