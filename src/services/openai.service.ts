@@ -13,16 +13,16 @@ export class OpenaiService {
 
   async generateReadme(source: string): Promise<string> {
     const response = await this.openai.chat.completions.create({
-      model: 'gpt-4o',
+      model: 'gpt-4-turbo',
       messages: [
         {
           role: 'system',
           content:
-            'Você é um assistente que gera documentações detalhadas para projetos, incluindo arquitetura e o contexto do projeto.',
+            'Você é um assistente especialista em documentação técnica. Gere documentações detalhadas para projetos, incluindo descrição, arquitetura, contexto, instruções de uso e exemplos de código, utilizando formatação Markdown.',
         },
         {
           role: 'user',
-          content: `Gere um README.md para o seguinte projeto:\n\n${source}`,
+          content: `Crie um arquivo README.md completo para o seguinte projeto:\n\n${source}`,
         },
       ],
       temperature: 0.7,
