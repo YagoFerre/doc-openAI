@@ -13,7 +13,7 @@ export class OpenaiService {
 
   async generateReadme(source: string): Promise<string> {
     const response = await this.openai.chat.completions.create({
-      model: 'gpt-4-turbo',
+      model: 'gpt-5-mini-2025-08-07',
       messages: [
         {
           role: 'system',
@@ -25,8 +25,6 @@ export class OpenaiService {
           content: `Crie um arquivo README.md completo para o seguinte projeto:\n\n${source}`,
         },
       ],
-      temperature: 0.7,
-      max_tokens: 2000,
     });
 
     return response.choices[0].message.content || '';
